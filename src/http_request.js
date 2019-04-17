@@ -25,13 +25,11 @@ export default class HttpRequest {
       }).then((res)=>{
         return res.json()
       }).then((data)=>{
-        if (data['succeed']) {
-          delete data['succeed']
-          resolve(data)
+        if (data['code'] === 0) {
+          resolve(data['data'])
         } else {
-          delete data['succeed']
-          isAlert === true && alert(data['error_message'])
-          reject(new Error(data['error_message']))
+          isAlert === true && alert(data['msg'])
+          reject(new Error(data['msg']))
         }
       }).catch((err) => {
         reject(err)
@@ -53,13 +51,11 @@ export default class HttpRequest {
       }).then((res)=>{
         return res.json()
       }).then((data)=> {
-        if (data['succeed']) {
-          delete data['succeed']
-          resolve(data)
+        if (data['code'] === 0) {
+          resolve(data['data'])
         } else {
-          delete data['succeed']
-          isAlert === true && alert(data['error_message'])
-          reject(new Error(data['error_message']))
+          isAlert === true && alert(data['msg'])
+          reject(new Error(data['msg']))
         }
       }).catch((err)=> {
         reject(err)
