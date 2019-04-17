@@ -1,0 +1,48 @@
+{
+  "name": "js-web-httprequest",
+  "version": "0.0.1",
+  "description": "http request tool of js web",
+  "keywords": [
+    "common",
+    "js",
+    "tool",
+    "web"
+  ],
+  "homepage": "https://github.com/pefish/js-web-httprequest",
+  "bugs": "https://github.com/pefish/js-web-httprequest/issues",
+  "license": "MIT",
+  "author": "pefish",
+  "engines": {
+    "node": "*"
+  },
+  "main": "lib/http_request.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pefish/js-web-httprequest"
+  },
+  "scripts": {
+    "build": "rm -rf lib && babel src -d lib"
+  },
+  "dependencies": {},
+  "babel": {
+    "presets": [
+      "env",
+      "stage-3"
+    ],
+    "ignore": [
+      "node_modules"
+    ],
+    "env": {
+      "build": {
+        "optional": [
+          "optimisation",
+          "minification"
+        ]
+      }
+    }
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1"
+  }
+}
